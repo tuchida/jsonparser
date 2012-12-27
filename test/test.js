@@ -73,6 +73,7 @@ it('Object', function() {
   assert.throws(function() { JSONParser.parse('{"abc",}'); });
   assert.throws(function() { JSONParser.parse('{"abc"}', { lastComma: true }); });
   assert.throws(function() { JSONParser.parse('{"abc",}', { lastComma: true }); });
+  assert.deepEqual(JSONParser.parse('{"a": 1, "a": 2 }'), { a: 2 });
 });
 
 it('Other JavaScript Object', function() {
